@@ -3,14 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mensagem para Minha Namorada</title>
+  <title>Juju do Coração</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <h1>Para a minha Jujuuuu</h1>
-    <p>Esperoo que este site faça o seu dia mais especial. Você é a pessoa mais incrível e importante na minha vida. Eu te amo muito!</p>
-    <p>Com amor, [Seu Nome]</p>
+    <h1>Para a minha Juju que eu mais amo!</h1>
+    <p>Olá meu pinguimzinho amor da minha vida! Queria só te lembrar que te amo mesmo muitoooooooooo ok? Tenho muitaaaaaaaaaas saudades tuas meu amorzinho mais fofinho! 🐧💕</p>
+    <p>És mesmo tudo para mim Joana, não era capaz de ver a minha vida sem ti, não ia fazer qualquer sentido, só quero que chegue o dia do nosso casamento!</p>
+    <p>Amo-te muitooooooo mais para além do ∞</p>
+    <p>Com muito amor, o Amor da tua Vida, Pedrin, o antigo Rei das Novinhas</p>
+    <!-- Botão -->
+    <button onclick="playVideo()">Clica Aqui!</button>
+    
+    <!-- Div que será substituída pelo vídeo -->
+    <div id="videoContainer"></div>
+    <p>❤️💙💚💛🧡💜</p>
   </div>
+
+  <script>
+    function playVideo() {
+      var videoContainer = document.getElementById('videoContainer');
+      videoContainer.innerHTML = '<iframe width="640" height="360" src="https://drive.google.com/file/d/1dOcsm_sIA1iVouDNMDryaBF5-F4wseXg/preview" frameborder="0" allowfullscreen></iframe>';
+    }
+  </script>
 </body>
 </html>
