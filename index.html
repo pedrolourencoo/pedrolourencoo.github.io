@@ -6,6 +6,41 @@
   <title>Juju do Coração</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* Estilo para ocultar a div inicialmente */
+    #videoContainer {
+      display: none;
+    }
+    /* Estilo para o vídeo responsivo */
+    #videoContainer.visible {
+      position: relative;
+      padding-bottom: 56.25%; /* Proporção 16:9 (calculada como 9 dividido por 16 multiplicado por 100) */
+      padding-top: 30px; /* Espaço para o título e o botão */
+      height: 0;
+      overflow: hidden;
+    }
+    #videoContainer.visible iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Estilizando o botão */
+    button {
+      background-color: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    button:hover {
+      background-color: #e2544b;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -15,17 +50,32 @@
     <p>Amo-te muitooooooo mais para além do ∞</p>
     <p>Com muito amor, o Amor da tua Vida, Pedrin, o antigo Rei das Novinhas</p>
     <!-- Botão -->
-    <button onclick="playVideo()">Clica Aqui!</button>
+    <button onclick="playAudio()">Clica Aqui!</button>
+    <p></p>
+
+    <!-- Áudio que será reproduzido -->
+    <audio id="audio" src="audios/cavalo.mp3"></audio>
     
     <!-- Div que será substituída pelo vídeo -->
-    <div id="videoContainer"></div>
+    <div id="videoContainer" class="visible"></div>
     <p>❤️💙💚💛🧡💜</p>
   </div>
 
   <script>
+    function playAudio() {
+      var audio = document.getElementById('audio');
+      audio.play();
+
+      // Chama a função para mostrar o vídeo após a reprodução do áudio
+      setTimeout(playVideo, 500); // Aguarde 0,5 segundos antes de mostrar o vídeo (ajuste conforme necessário)
+    }
+
     function playVideo() {
       var videoContainer = document.getElementById('videoContainer');
-      videoContainer.innerHTML = '<iframe width="640" height="360" src="https://drive.google.com/file/d/1dOcsm_sIA1iVouDNMDryaBF5-F4wseXg/preview" frameborder="0" allowfullscreen></iframe>';
+      // Torna a div do vídeo visível quando o botão é clicado
+      videoContainer.style.display = 'block';
+      // Substitui o conteúdo da div pelo vídeo
+      videoContainer.innerHTML = '<iframe src="https://drive.google.com/file/d/1dOcsm_sIA1iVouDNMDryaBF5-F4wseXg/preview" frameborder="0" allowfullscreen></iframe>';
     }
   </script>
 </body>
